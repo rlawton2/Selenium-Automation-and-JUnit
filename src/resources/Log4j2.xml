@@ -1,0 +1,33 @@
+<Configuration>
+    <!-- The following is to create a log file
+    <Properties>
+        <Property name="basePath">./logs</Property>
+    </Properties>-->
+    <Appenders>
+        <!--
+        <RollingFile name="File" fileName="${basePath}/app.log" filePattern="${basePath}/app-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SS} %-5level %c{1} -%msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size="100 KB" />
+            </Policies>
+        </RollingFile>
+        -->
+        <Console name="Console">
+            <PatternLayout pattern="%d{HH:mm:ss.SS} %-5level %c[1] %msg%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console" />
+            <!--
+            <AppenderRef ref="File" />
+            -->
+            <!-- To specify which packages to log
+            <Logger name="packageName" level="debug" additivity="false" >
+                <AppenderRef ref="File" />
+            </Logger>
+            -->
+        </Root>
+    </Loggers>
+</Configuration>
